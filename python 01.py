@@ -1,8 +1,8 @@
+"""
 #Ejercicio 01
 print("hola")
 
-"""Ejercicio
-    02"""
+#Ejercicio 02
 a=3
 b=5
 print("La suma de a + b es ",(a + b))
@@ -44,6 +44,61 @@ else:
         print("El segundo fue el mayor",g)
     else:
         print("El segundo y tercero son los mayores",g,h)
-
+"""
 #Ejercicio 07
+j=int(input("Ingrese un numero: "))
+if(j%2):
+    print("el numero",j, "no es divisible por 2, IMPAR")
+else:
+    print("el numero",j, "es divisible por 2, PAR")
 
+#Ejercicio 08
+if ((not j%2) or (not j%3) or (not j%5) or (not j%7)):
+    print("El numero ",j,"es divisible por 2, 3, 5 o 7") 
+else:
+    print("El numero",j,"no es divisible por 2, 3, 5 o 7")
+
+#Ejercicio 09
+if (j%2 and j%3 and j%5 and j%7):
+    print("El numero",j,"no es divisible por 2, 3, 5 o 7")
+    #print("El numero ",j," es divisible por 2, 3, 5 o 7") 
+else:
+    if(not j%2):
+        if(not j%3):
+            if(not j%5):
+                if(not j%7):
+                    print("El numero",j,"es divisible por 2, 3, 5 y 7")
+                else:
+                    print("El numero",j,"es divisible por 2, 3 y 5")
+            elif(not j%7):
+                print("El numero",j,"es divisible por 2, 3 y 7")
+            else:
+                print("El numero",j,"es divisible por 2 y 3")
+        elif(not j%5):
+            if(not j%7):
+                print("El numero",j,"es divisible por 2, 5 y 7")
+            else:
+                print("El numero",j,"es divisible por 2 y 5")
+        elif(not j%7):
+            print("El numero",j,"es divisible por 2 y 7")
+        else:
+            print("El numero",j,"es divisible por 2")
+    elif(not j%3):
+        if(not j%5):
+            if(not j%7):
+                print("El numero",j,"es divisible por 3, 5 y 7")
+            else:
+                print("El numero",j,"es divisible por 3 y 5")
+        elif(not j%7):
+            print("El numero",j,"es divisible por 3 y 7")
+        else:
+            print("El numero",j,"es divisible por 3")
+    elif(not j%5):
+        if(not j%7):
+            print("El numero",j,"es divisible por 5 y 7")
+        else:
+            print("El numero",j,"es divisible por 5")
+    else:
+        print("El numero",j,"es divisible por 7")
+
+        
