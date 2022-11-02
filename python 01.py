@@ -44,7 +44,7 @@ else:
         print("El segundo fue el mayor",g)
     else:
         print("El segundo y tercero son los mayores",g,h)
-"""
+
 #Ejercicio 07
 j=int(input("Ingrese un numero: "))
 if(j%2):
@@ -100,5 +100,12 @@ else:
             print("El numero",j,"es divisible por 5")
     else:
         print("El numero",j,"es divisible por 7")
+"""""
+#Ejercicio 10
+k=int(input("Ingrese un numero: "))
+print(k,"es divisible por:")
+for i in range(1,10,1):
+    if(not k%i):
+        print(i)
 
-        
+#Ejercicio 11
