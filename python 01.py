@@ -100,12 +100,14 @@ else:
             print("El numero",j,"es divisible por 5")
     else:
         print("El numero",j,"es divisible por 7")
-"""""
+
 #Ejercicio 10
 k=int(input("Ingrese un numero: "))
 print(k,"es divisible por:")
 for i in range(1,10,1):
     if(not k%i):
         print(i)
-
+"""
 #Ejercicio 11
+"""for i in range (20,-1,-1):
+    print (i)"""
