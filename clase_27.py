@@ -111,3 +111,39 @@ d1,d2,d3,d4,d5=dias
 print(d1)
 print(d2)
 print(d3)
+
+#Diccionario dic:{clave:valor, clave2:valor2}
+dic0={} #vacio
+dic={"Ramiro":39,"Luciano":32,"Ale":40}
+dic2={"Ramiro":"Perez","Luciano":"Signorelli","Ale":"Lencinas"}
+print (dic)
+print(dic["Ale"])
+for clave in dic:
+    print(clave,dic[clave])
+    print(dic[clave])
+    
+for clave in dic2:
+    print(dic2[clave])
+
+#for clave in dic2.values():
+#    print(dic2[clave])
+
+#TUPLAS
+fecha=(10,22,2022)
+print(fecha)
+dia,mes,anio=fecha
+print(dia)
+print(mes)
+print(anio)
+
+tupla=(10,"Noviembre",2022,"Comision 22535")
+print(tupla[1])
+
+for elem in tupla:
+    print(elem)
+
+tupla2=("Palotes","Juan",(1982,11,7),29699486)
+apellido,nombre,nac,dni=tupla2
+
+conjunto={1,24,3,-5,7,16,9,-2,4,6}
+print(conjunto) 

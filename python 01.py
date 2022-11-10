@@ -107,7 +107,18 @@ print(k,"es divisible por:")
 for i in range(1,10,1):
     if(not k%i):
         print(i)
-"""
+
 #Ejercicio 11
-"""for i in range (20,-1,-1):
-    print (i)"""
+resp="s"
+while(resp=="s"):
+    l=int(input("ingrese un numero: "))
+    if(l==2 or l==3 or l==5 or l==7):
+        print ("El numero",l,"es primo. \n")
+    else:
+        if(not l%2 or not l%3 or not l%5 or not l%7):
+            print ("El numero",l,"no es primo. \n")
+        else:
+            print("El numero",l,"es primo. \n")
+    resp=input("presione s para seguir o cualquier tecla para salir: \n")
+"""
+#Ejercicio 12
