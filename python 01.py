@@ -120,5 +120,64 @@ while(resp=="s"):
         else:
             print("El numero",l,"es primo. \n")
     resp=input("presione s para seguir o cualquier tecla para salir: \n")
-"""
+
 #Ejercicio 12
+
+nota=int(input("\nIngrese una nota entre cero y diez (0-10): "))
+if (nota>=0 and nota <=3):
+    print("\nUsted ingresó",nota)
+    print("La nota fue muy deficiente.")
+elif(nota>3 and nota <=6):
+    print("\nUsted ingresó",nota)
+    print("La nota fue suficiente.")
+elif(nota>6 and nota <=8):
+    print("\nUsted ingresó",nota)
+    print("La nota fue notable.")
+elif(nota>8 and nota <=10):
+    print("\nUsted ingresó",nota)
+    print("La nota fue notable.")
+else:
+    print("\nUsted ingresó",nota)
+    print("La nota esta fuera del rango.")
+
+#Ejercicio 13
+for i in range(1,31):
+    print('\n')
+    for k in range(i):
+        if (i<10):
+            print('0'+str(i)+' ',end='')
+        else:
+            print(str(i)+' ',end='')
+
+
+
+#Ejercicio 14
+for i in range(31,0,-1):
+    print('\n')
+    for k in range(i):
+        if (i<10):
+            print('0'+str(i)+' ',end='') #end() por defecto es '\n', al llamar end('') se imprime un espacio al final del print
+        else:
+            print(str(i)+' ',end='')
+
+"""
+
+#Ejercicio 15
+linea=0
+for i in range(1,501):
+    if(linea==5):
+        print('-------------------------')
+        linea=0
+    else:
+        if(not i%4):
+            print(str(i)+" Multiplo de 4")
+            linea += 1
+        elif(not i%5):
+            print(str(i)+" Multiplo de 5")
+            linea += 1
+        elif(not i%9):
+            print(str(i)+" Multiplo de 9")
+            linea += 1
+        else:
+            print(str(i))
+            linea += 1
