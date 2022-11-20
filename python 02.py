@@ -46,4 +46,7 @@ resultado=solo_mayor(primer_numero,segundo_numero,tercer_numero)
 if(resultado<0):
     print("No se hallo un maximo estricto entre los tres numeros ingresados.")
 else:
-    print("El maximo entre los tres valores ingresados fue "+str(resultado))
+    print(f'El maximo entre los tres valores ingresados fue {str(resultado)}.')
+
+#Ejercicio 02
+
