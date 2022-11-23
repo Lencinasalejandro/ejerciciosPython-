@@ -154,3 +154,60 @@ alumno2.aprueba()
 """
 
 #Ejercicio 7
+
+class triangulo():
+
+    def __init__(self):
+        self.lado_a=int(input("Ingrese la longitud del lado A: "))
+        self.lado_b=int(input("Ingrese la longitud del lado B: "))
+        self.lado_c=int(input("Ingrese la longitud del lado C: "))
+    
+    def lado_y_tipo(self):
+        if(self.lado_a==self.lado_b and self.lado_b==self.lado_c):
+            print(f'Todos los lados son iguales y miden {self.lado_a}. \nEl triangulo es equiltero.')
+        
+        elif(self.lado_a==self.lado_b and self.lado_a>self.lado_c):
+            print(f'El lado A y B miden {self.lado_a} y son los mayores. \nEl triangulo es isosceles.')
+
+        elif(self.lado_a==self.lado_b and self.lado_a<self.lado_c):
+            print(f'El lado C mide {self.lado_c} y es el mayor. \nEl triangulo es isosceles.')
+        
+        elif(self.lado_a==self.lado_c and self.lado_a>self.lado_b):
+            print(f'El lado A y C miden {self.lado_a} y son los mayores. \nEl triangulo es isosceles.')
+
+        elif(self.lado_a==self.lado_c and self.lado_a<self.lado_b):
+            print(f'El lado B mide {self.lado_b} y es el mayor. \nEl triangulo es isosceles.')
+        
+        elif(self.lado_b==self.lado_c and self.lado_b>self.lado_a):
+            print(f'El lado B y C miden {self.lado_b} y son los mayores. \nEl triangulo es isosceles.')
+
+        elif(self.lado_c==self.lado_c and self.lado_b<self.lado_a):
+            print(f'El lado C mide {self.lado_a} y es el mayor. \nEl triangulo es isosceles.')
+
+
+
+        elif(self.lado_a>self.lado_b and self.lado_b>self.lado_c):
+            print(f'El lado A mide {self.lado_a} y es el mayor. \nEl triangulo es escaleno.')
+        
+        elif(self.lado_a>self.lado_c and self.lado_b<self.lado_c):
+            print(f'El lado A mide {self.lado_a} y es el mayor. \nEl triangulo es escaleno.')
+
+        elif(self.lado_b>self.lado_a and self.lado_a>self.lado_c):
+            print(f'El lado B mide {self.lado_b} y es el mayor. \nEl triangulo es escaleno.')
+        
+        elif(self.lado_b>self.lado_a and self.lado_a<self.lado_c):
+            print(f'El lado B mide {self.lado_b} y es el mayor. \nEl triangulo es escaleno.')
+        
+        elif(self.lado_c>self.lado_a and self.lado_a>self.lado_b):
+            print(f'El lado C mide {self.lado_c} y es el mayor. \nEl triangulo es escaleno.')
+        
+        elif(self.lado_c>self.lado_b and self.lado_a<self.lado_b):
+            print(f'El lado C mide {self.lado_c} y es el mayor. \n El triangulo es escaleno.')
+               
+           
+triangulo1=triangulo()
+
+triangulo1.lado_y_tipo()
+
+#Ejercicio 08
+
