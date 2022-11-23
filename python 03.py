@@ -209,5 +209,50 @@ triangulo1=triangulo()
 
 triangulo1.lado_y_tipo()
 
-#Ejercicio 08
+#Ejercicio 8
+
+class Calculadora():
+    def __init__(self):
+        self.num1=int(input("Ingrese el primer numero: "))
+        self.num2=int(input("Ingrese el segundo numero: "))
+
+    def suma(self):
+        print(f'La suma de los numeros ingresados es {self.num1+self.num2}')
+
+    def resta(self):
+        print(f'La resta de los numeros ingresados es {self.num1-self.num2}')
+
+    def prod(self):
+        print(f'El producto de los numeros ingresados es {self.num1*self.num2}')
+
+    def division(self):
+        print(f'La division de los numeros ingresados es {self.num1/self.num2}')  
+
+calc=Calculadora()
+
+calc.suma()
+calc.resta()
+calc.prod()
+calc.division()
+
+#Ejercicio 9
+"""Realizar una clase que administre una agenda. Se debe almacenar para cada
+contacto el nombre, el teléfono y el email. Además deberá mostrar un menú
+con las siguientes opciones: Añadir contacto, Listar contactos, Buscar contacto,
+Editar contacto, Cerrar agenda."""
+
+listado=[]
+
+class Contacto():
+    def __init__(self):
+        self.nombre=input("ingrese el nombre: ")
+        self.mail=input("ingrese el mail: ")
+        self.cel=input("ingrese el telefono")
+        listado.append(self)
+
+    def __str__(self):
+        return (f'NOMBRE: {self.nombre} \nEMAIL: {self.mail} \n TELEFONO: {self.cel}\n')
+
+#class Agenda():
+#   def __init__(self):
 
