@@ -233,13 +233,13 @@ calc.resta()
 calc.prod()
 calc.division()
 
-"""
+
 
 #Ejercicio 9
-"""Realizar una clase que administre una agenda. Se debe almacenar para cada
-contacto el nombre, el teléfono y el email. Además deberá mostrar un menú
-con las siguientes opciones: Añadir contacto, Listar contactos, Buscar contacto,
-Editar contacto, Cerrar agenda."""
+#Realizar una clase que administre una agenda. Se debe almacenar para cada
+#contacto el nombre, el teléfono y el email. Además deberá mostrar un menú
+#con las siguientes opciones: Añadir contacto, Listar contactos, Buscar contacto,
+#Editar contacto, Cerrar agenda.
 
 listado=[]
 
@@ -251,31 +251,75 @@ class Contacto():
         
         listado.append(self)
 
+    
     def __str__(self):
         return (f'NOMBRE: {self.nombre} \nTELEFONO: {self.cel}\nEMAIL: {self.mail} \n')
 
 class Agenda():
-    opcion=8
+    
     def __init__(self):
+        opcion=8
+        
         while(opcion!=5):
-            print("\n Que desea hacer?")
+
+            print("\nQue desea hacer?")
             print("Presione 1 para agragar un contacto")
             print("Presione 2 para eliminar un contacto")
             print("Presione 3 para listar los contactos")
             print("Presione 4 para buscar un contacto")
             print("Presione 5 para cerrar la agenda")
-            opcion=input("\n")
+            opcion=int(input("\n"))
         
             if(opcion==1):
-                print(len(listado))
+                con=Contacto()
+                print("Contacto agregado.")
+                print(con)
+                
+            elif(opcion==2):
+                borrar_ok=False
+                i=0
+                borrar=input("ingrese el nombre del contacto a eliminar: ")
+                for lista in listado:
+                    if(lista.nombre==borrar):
+                        print("Se encontro el contacto: \n",lista,"\ny sera eliminado")
+                        listado.pop(i)
+                        borrar_ok=True
+                    i+=1
+                
+                if(not borrar_ok):
+                    print("No se encontro contacto con el nombre ",borrar)
+
+            elif(opcion==3):
+                for lista in listado:
+                    print(lista)
+                print("La Agenda tiene ",len(listado)," contactos.")
+
+            elif(opcion==4):
+                busqueda_ok=False
+                busqueda=input("ingrese el nombre del contacto: ")
+                for lista in listado:
+                    if(lista.nombre==busqueda):
+                        print("Se encontró informacion para el contacto ",busqueda)
+                        print(lista)
+                        busqueda_ok=True
+                if(not busqueda_ok):
+                    print("No se encontro informacion para el contacto ",busqueda)
+
+            elif(opcion!=1 and opcion!=2 and opcion!=3 and opcion!=4 and opcion!=5):
+                print("Ingresó una opcion incorrecta, intentelo de nuevo.")
+        print("Gracias por usar la Agenda")
 
 
 cont1=Contacto()
 cont2=Contacto()
-
 
 print(cont1)
 
 print(listado[1])
 
 agenda=Agenda()
+
+"""
+
+#Ejercicio 10
+
