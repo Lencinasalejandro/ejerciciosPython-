@@ -151,8 +151,6 @@ alumno1.aprueba()
 alumno2=alumno()
 alumno2.aprueba()
 
-"""
-
 #Ejercicio 7
 
 class triangulo():
@@ -235,6 +233,8 @@ calc.resta()
 calc.prod()
 calc.division()
 
+"""
+
 #Ejercicio 9
 """Realizar una clase que administre una agenda. Se debe almacenar para cada
 contacto el nombre, el teléfono y el email. Además deberá mostrar un menú
@@ -246,13 +246,36 @@ listado=[]
 class Contacto():
     def __init__(self):
         self.nombre=input("ingrese el nombre: ")
+        self.cel=input("ingrese el telefono: ")
         self.mail=input("ingrese el mail: ")
-        self.cel=input("ingrese el telefono")
+        
         listado.append(self)
 
     def __str__(self):
-        return (f'NOMBRE: {self.nombre} \nEMAIL: {self.mail} \n TELEFONO: {self.cel}\n')
+        return (f'NOMBRE: {self.nombre} \nTELEFONO: {self.cel}\nEMAIL: {self.mail} \n')
 
-#class Agenda():
-#   def __init__(self):
+class Agenda():
+    opcion=8
+    def __init__(self):
+        while(opcion!=5):
+            print("\n Que desea hacer?")
+            print("Presione 1 para agragar un contacto")
+            print("Presione 2 para eliminar un contacto")
+            print("Presione 3 para listar los contactos")
+            print("Presione 4 para buscar un contacto")
+            print("Presione 5 para cerrar la agenda")
+            opcion=input("\n")
+        
+            if(opcion==1):
+                print(len(listado))
 
+
+cont1=Contacto()
+cont2=Contacto()
+
+
+print(cont1)
+
+print(listado[1])
+
+agenda=Agenda()
