@@ -323,3 +323,82 @@ agenda=Agenda()
 
 #Ejercicio 10
 
+# En un banco tienen clientes que pueden hacer depósitos y extracciones de
+# dinero. El banco requiere también al final del día calcular la cantidad de dinero
+# que se ha depositado. Se deberán crear dos clases, la clase cliente y la clase
+# banco. La clase cliente tendrá los atributos nombre y cantidad y los métodos
+# __init__, depositar, extraer, mostrar_total. La clase banco tendrá como
+# atributos 3 objetos de la clase cliente y los métodos __init__, operar y
+# deposito_total. 
+
+depositos=0
+
+class Cliente():
+    def __init__(self,nombre,dinero=0):
+        self.nombre=nombre
+        self.dinero=dinero
+
+    def depositar(self,cantidad):
+        if(cantidad>0):
+            self.dinero+=cantidad
+            depositos+=cantidad
+            print(f'Se ha depositado {cantidad}.')
+        else:
+            print(f'Ingrese una cantidad mayor a cero.')
+    
+    def extraer(self,cantidad):
+        if(cantidad>self.dinero):
+            print(f'No se puede extraer mas dineo del disponible ({self.cantidad}).\nIngrese un monto valido.')
+        else:
+            self.dinero-=cantidad
+            print(f'Se ha extraido {cantidad}.')
+
+    def mostrar_total(self):
+        print(f'El saldo es {self.dinero}.')
+
+    def __str__(self):
+        cadena="Nombre: "+self.nombre+"\nSaldo: "+str(self.dinero)
+        return("")
+
+class Banco():
+    def __init__(self):
+        self.cli1=Cliente("Juan",2000)
+        self.cli2=Cliente("Ana",2500)
+        self.cli3=Cliente("Pedro",1000)
+        self.cli4=Cliente("Elsa",3000)
+
+    def deposito_total(self):
+        print(f'Se ha depositado {depositos}')
+
+    def operar(self,Cliente):
+        print(f'Presione D para depositar.')
+        print(f'Presione E para extraer.')
+        print(f'Presione M para mostar el saldo total.')
+        opcion=input("\n")
+        if (opcion=="D"):
+            monto=int(input("Ingrese el monto a depositar: "))
+            Cliente.depositar(monto)
+        elif(opcion=="E"):
+            monto=int(input("Ingrese el monto a extraer: "))
+            Cliente.extraer(monto)
+        elif(opcion=="M"):
+            Cliente.mostrar_total()
+
+        else:
+            print("Opcion invalida.")
+
+
+
+banco1=Banco()
+
+banco1.deposito_total()
+
+""".depositar(500)
+
+banco1.operar(cli1)
+banco1.operar(cli2)
+banco1.operar(cli3)
+"""
+banco1.deposito_total()
+
+
