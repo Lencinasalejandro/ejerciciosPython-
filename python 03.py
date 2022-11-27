@@ -339,10 +339,11 @@ class Cliente():
         self.dinero=dinero
 
     def depositar(self,cantidad):
+        global depositos
         if(cantidad>0):
             self.dinero+=cantidad
-            depositos+=cantidad
-            print(f'Se ha depositado {cantidad}.')
+            depositos=depositos+cantidad
+            print(f'Se han depositado {cantidad} pesos en la cuenta de {self.nombre}.')
         else:
             print(f'Ingrese una cantidad mayor a cero.')
     
@@ -351,16 +352,19 @@ class Cliente():
             print(f'No se puede extraer mas dineo del disponible ({self.cantidad}).\nIngrese un monto valido.')
         else:
             self.dinero-=cantidad
-            print(f'Se ha extraido {cantidad}.')
+            print(f'Se ha extraido {cantidad} pesos de la cuenta de {self.nombre}.')
 
     def mostrar_total(self):
         print(f'El saldo es {self.dinero}.')
 
     def __str__(self):
         cadena="Nombre: "+self.nombre+"\nSaldo: "+str(self.dinero)
-        return("")
+        return(cadena)
 
 class Banco():
+
+    banco="Nacion"
+
     def __init__(self):
         self.cli1=Cliente("Juan",2000)
         self.cli2=Cliente("Ana",2500)
@@ -368,37 +372,66 @@ class Banco():
         self.cli4=Cliente("Elsa",3000)
 
     def deposito_total(self):
-        print(f'Se ha depositado {depositos}')
+        print(f'Hoy se han depositado {depositos} pesos en el banco {self.banco}.')
 
-    def operar(self,Cliente):
-        print(f'Presione D para depositar.')
-        print(f'Presione E para extraer.')
-        print(f'Presione M para mostar el saldo total.')
-        opcion=input("\n")
-        if (opcion=="D"):
-            monto=int(input("Ingrese el monto a depositar: "))
-            Cliente.depositar(monto)
-        elif(opcion=="E"):
-            monto=int(input("Ingrese el monto a extraer: "))
-            Cliente.extraer(monto)
-        elif(opcion=="M"):
-            Cliente.mostrar_total()
-
+    def operar(self):
+        cliente=input("Ingrese el nombre del cliente para operar: ")
+        if(cliente!="Juan" and cliente!="Ana" and cliente!="Pedro" and cliente!="Elsa"):
+            print("El cliente ingresado no esta es del banco")
         else:
-            print("Opcion invalida.")
-
+            print(f'Presione D para depositar.')
+            print(f'Presione E para extraer.')
+            print(f'Presione M para mostar el saldo total.')
+            opcion=input()
+            if (opcion=="D"):
+                monto=int(input("Ingrese el monto a depositar: "))
+                if(cliente=="Juan"):
+                    self.cli1.depositar(monto)
+                    print(self.cli1)
+                elif(cliente=="Ana"):
+                    self.cli2.depositar(monto)
+                    print(self.cli2)
+                elif(cliente=="Pedro"):
+                    self.cli3.depositar(monto)
+                    print(self.cli3)
+                else:
+                    self.cli4.depositar(monto)
+                    print(self.cli4)
+                
+            elif(opcion=="E"):
+                monto=int(input("Ingrese el monto a extraer: "))
+                if(cliente=="Juan"):
+                    self.cli1.extraer(monto)
+                    print(self.cli1)
+                elif(cliente=="Ana"):
+                    self.cli2.extraer(monto)
+                    print(self.cli2)
+                elif(cliente=="Pedro"):
+                    self.cli3.extraer(monto)
+                    print(self.cli3)
+                else:
+                    self.cli4.extraer(monto)
+                    print(self.cli4)
+                    
+            elif(opcion=="M"):
+                if(cliente=="Juan"):
+                    self.cli1.mostrar_total()
+                elif(cliente=="Ana"):
+                    self.cli2.mostrar_total()
+                elif(cliente=="Pedro"):
+                    self.cli3.mostrar_total()
+                else:
+                    self.cli4.mostrar_total()
+            
+            else:
+                print("Opcion invalida.")
 
 
 banco1=Banco()
 
-banco1.deposito_total()
-
-""".depositar(500)
-
-banco1.operar(cli1)
-banco1.operar(cli2)
-banco1.operar(cli3)
-"""
-banco1.deposito_total()
-
-
+while(True):
+    banco1.operar()
+    banco1.deposito_total()
+    opt=input("Para continuar presione C para salir S: ")
+    if(opt=="s"):
+        break
