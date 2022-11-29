@@ -323,3 +323,115 @@ agenda=Agenda()
 
 #Ejercicio 10
 
+# En un banco tienen clientes que pueden hacer depósitos y extracciones de
+# dinero. El banco requiere también al final del día calcular la cantidad de dinero
+# que se ha depositado. Se deberán crear dos clases, la clase cliente y la clase
+# banco. La clase cliente tendrá los atributos nombre y cantidad y los métodos
+# __init__, depositar, extraer, mostrar_total. La clase banco tendrá como
+# atributos 3 objetos de la clase cliente y los métodos __init__, operar y
+# deposito_total. 
+
+depositos=0
+
+class Cliente():
+    def __init__(self,nombre,dinero=0):
+        self.nombre=nombre
+        self.dinero=dinero
+
+    def depositar(self,cantidad):
+        global depositos
+        if(cantidad>0):
+            self.dinero+=cantidad
+            depositos=depositos+cantidad
+            print(f'Se han depositado {cantidad} pesos en la cuenta de {self.nombre}.')
+        else:
+            print(f'Ingrese una cantidad mayor a cero.')
+    
+    def extraer(self,cantidad):
+        if(cantidad>self.dinero):
+            print(f'No se puede extraer mas dineo del disponible ({self.cantidad}).\nIngrese un monto valido.')
+        else:
+            self.dinero-=cantidad
+            print(f'Se ha extraido {cantidad} pesos de la cuenta de {self.nombre}.')
+
+    def mostrar_total(self):
+        print(f'El saldo es {self.dinero}.')
+
+    def __str__(self):
+        cadena="Nombre: "+self.nombre+"\nSaldo: "+str(self.dinero)
+        return(cadena)
+
+class Banco():
+
+    banco="Nacion"
+
+    def __init__(self):
+        self.cli1=Cliente("Juan",2000)
+        self.cli2=Cliente("Ana",2500)
+        self.cli3=Cliente("Pedro",1000)
+        self.cli4=Cliente("Elsa",3000)
+
+    def deposito_total(self):
+        print(f'Hoy se han depositado {depositos} pesos en el banco {self.banco}.')
+
+    def operar(self):
+        cliente=input("Ingrese el nombre del cliente para operar: ")
+        if(cliente!="Juan" and cliente!="Ana" and cliente!="Pedro" and cliente!="Elsa"):
+            print("El cliente ingresado no esta es del banco")
+        else:
+            print(f'Presione D para depositar.')
+            print(f'Presione E para extraer.')
+            print(f'Presione M para mostar el saldo total.')
+            opcion=input()
+            if (opcion=="D"):
+                monto=int(input("Ingrese el monto a depositar: "))
+                if(cliente=="Juan"):
+                    self.cli1.depositar(monto)
+                    print(self.cli1)
+                elif(cliente=="Ana"):
+                    self.cli2.depositar(monto)
+                    print(self.cli2)
+                elif(cliente=="Pedro"):
+                    self.cli3.depositar(monto)
+                    print(self.cli3)
+                else:
+                    self.cli4.depositar(monto)
+                    print(self.cli4)
+                
+            elif(opcion=="E"):
+                monto=int(input("Ingrese el monto a extraer: "))
+                if(cliente=="Juan"):
+                    self.cli1.extraer(monto)
+                    print(self.cli1)
+                elif(cliente=="Ana"):
+                    self.cli2.extraer(monto)
+                    print(self.cli2)
+                elif(cliente=="Pedro"):
+                    self.cli3.extraer(monto)
+                    print(self.cli3)
+                else:
+                    self.cli4.extraer(monto)
+                    print(self.cli4)
+                    
+            elif(opcion=="M"):
+                if(cliente=="Juan"):
+                    self.cli1.mostrar_total()
+                elif(cliente=="Ana"):
+                    self.cli2.mostrar_total()
+                elif(cliente=="Pedro"):
+                    self.cli3.mostrar_total()
+                else:
+                    self.cli4.mostrar_total()
+            
+            else:
+                print("Opcion invalida.")
+
+
+banco1=Banco()
+
+while(True):
+    banco1.operar()
+    banco1.deposito_total()
+    opt=input("Para continuar presione C para salir S: ")
+    if(opt=="s"):
+        break
