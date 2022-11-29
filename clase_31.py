@@ -38,7 +38,7 @@ def obtener_saldo(self):
 def nombre(self):      
     return self.__nombre
 
-@nombre.setter
+@nombre.setter #decoradoresssss
 def nombre(self,nombre):
     self.__nombre=nombre
   
