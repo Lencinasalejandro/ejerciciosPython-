@@ -28,5 +28,5 @@ listado.append(Camioneta())
 listado.append(Bicicleta())
 listado.append(Moto())
 
-print(vehiculos)
+print(listado)
 
