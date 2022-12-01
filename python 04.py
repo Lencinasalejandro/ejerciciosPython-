@@ -47,18 +47,32 @@ class Moto(Vehiculo):
     def __str__(self):
         return super().__str__() + (f'La velocidad de la moto es {self.velocidad} y su cilindrada es {self.cilindrada}.\n')   
 
+def catalogar(vehiculos,ruedas=-1):
+    cuenta=0
+    for vehiculo in vehiculos:
+        if(vehiculo.rueda==-1):
+            print(type(vehiculo).__name__)
+            print(vehiculo)
+        elif(vehiculo.rueda==ruedas):
+            cuenta+=1
+            print(type(vehiculo).__name__)
+            print(vehiculo)
+    print (f'Se han encontrado {cuenta} vehiclos con {ruedas} ruedas') 
+   
+    
+    
 
 if __name__=='__main__':
     
-    listado=[]
+    vehiculos=[]
 
-    listado.append(Coche())
-    print (listado[0])
-    listado.append(Camioneta())
-    listado.append(Bicicleta())
-    print(listado[2])
-    listado.append(Moto())
+    vehiculos.append(Coche())
+    print (vehiculos[0])
+    vehiculos.append(Camioneta())
+    vehiculos.append(Bicicleta())
+    print(vehiculos[2])
+    vehiculos.append(Moto())
     
-    for elemento in listado:
-        print(elemento)
-
+    catalogar(vehiculos,2)
+    
+    
